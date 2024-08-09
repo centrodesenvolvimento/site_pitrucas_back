@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AdmissionsContent;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,14 +15,17 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            UserSeeder::class
+            UserSeeder::class,
+            AboutContentSeeder::class,
+
+            HomeContentSeeder::class,
+            AdmissionsContent::class,
+            DepartamentosSeeder::class,
+            InfoSeeder::class,
+            NewsSeeder::class
+
         ]);
-        $this->call([
-            HomeContentSeeder::class
-        ]);
-        $this->call([
-            AboutContentSeeder::class
-        ]);
+
 
     }
 }
