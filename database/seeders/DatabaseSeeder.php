@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
             AboutContentSeeder::class,
 
             HomeContentSeeder::class,
-            AdmissionsContent::class,
+            AdmissionsContentSeeder::class,
             DepartamentosSeeder::class,
             InfoSeeder::class,
             NewsSeeder::class
