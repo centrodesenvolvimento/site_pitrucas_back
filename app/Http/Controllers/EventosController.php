@@ -128,7 +128,9 @@ class EventosController extends Controller
                 'descricao' => $request->input('descricao'),
                 'localizacao' => $request->input('localizacao'),
                 'tipo' => $request->input('tipo'),
-                'iframe' => $request->input('iframe')
+                'iframe' => $request->input('iframe'),
+                'show' => $request->input('show')
+
             ];
             $departamento->info = $newObj;
             $departamento->save();
@@ -144,7 +146,9 @@ class EventosController extends Controller
                 'descricao' => $request->input('descricao'),
                 'localizacao' => $request->input('localizacao'),
                 'tipo' => $request->input('tipo'),
-                'iframe' => $request->input('iframe')
+                'iframe' => $request->input('iframe'),
+                'show' => $request->input('show')
+
             ];
             $departamento->info = $newObj;
             $departamento->save();

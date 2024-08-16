@@ -160,6 +160,8 @@ class NewsController extends Controller
                 'descricao'=> $request->input('descricao'),
                 'data'=> $request->input('data'),
                 'views'=> $request->input('views'),
+                'show' => $request->input('show')
+
             ];
             $news->save();
             return response()->json($news);
@@ -169,6 +171,7 @@ class NewsController extends Controller
                 'descricao'=> $request->input('descricao'),
                 'data'=> $request->input('data'),
                 'views'=> $request->input('views'),
+                'show' => $request->input('show')
             ];
             $news->info = $newObj;
             $news->save();

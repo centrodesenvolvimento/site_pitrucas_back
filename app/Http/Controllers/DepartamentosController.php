@@ -211,6 +211,7 @@ class DepartamentosController extends Controller
                                 $item['saidas']= $request->input('saidas');
                                 $item['tipo']= $request->input('tipo');
                                 $item['titulo']= $request->input('titulo');
+                                $item['show'] = $request->input('show');
                             }
                             return $item;
                         }, $departamento->cursos);

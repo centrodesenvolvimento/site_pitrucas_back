@@ -5,11 +5,14 @@ use App\Http\Controllers\AdmissionsContentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DepartamentosController;
 use App\Http\Controllers\EventosController;
+use App\Http\Controllers\EventoViewController;
 use App\Http\Controllers\HomeContentController;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\MonthlyViewsController;
 use App\Http\Controllers\NewsController;
 use App\Models\Eventos;
+use App\Models\MonthlyViews;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -73,6 +76,13 @@ Route::group([
     Route::get(('info'), [InfoController::class, 'all']);
     Route::post(('editInfo/{id}'), [InfoController::class, 'update']);
     Route::post('/send-email', [MailController::class, 'sendEmail']);
+    Route::get('/eventosViews', [EventoViewController::class, 'all']);Route::post('/addEventoView', [EventoViewController::class, 'store']);
+    Route::get('/monthlyViews', [MonthlyViewsController::class, 'all']);
+    Route::post('/addMonthlyView', [MonthlyViewsController::class, 'store']);
+
+
+
+
 
 
 

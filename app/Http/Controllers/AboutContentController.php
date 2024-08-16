@@ -203,6 +203,7 @@ class AboutContentController extends Controller
                             $item['titulo'] = $request->input('titulo');
                             $item['data'] = $request->input('data');
                             $item['documento'] = $filename;
+                            $item['show'] = $request->input('show');
                         }
                         return $item;
                     }, $aboutContent->regulamentos);
@@ -343,6 +344,7 @@ class AboutContentController extends Controller
                             $item['descricao'] = $request->input('descricao');
                             $item['imagem'] = $filename;
                             $item['hasMembers'] = false;
+                            $item['show'] = $request->input('show');
                         }
                         return $item;
                     }, $list);

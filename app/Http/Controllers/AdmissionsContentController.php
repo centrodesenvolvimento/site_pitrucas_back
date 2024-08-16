@@ -98,6 +98,7 @@ class AdmissionsContentController extends Controller
                             $item['nome'] = $request->input('nome');
                             $item['data'] = $request->input('data');
                             $item['documento'] = $filename;
+                            $item['show'] = $request->input('show');
                         }
                         return $item;
                     }, $admissionsContent->exames);
