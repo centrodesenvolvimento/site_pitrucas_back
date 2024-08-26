@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Avisos extends Model
+{
+    use HasFactory;
+    protected $table = 'avisos';
+
+    use HasFactory;
+    protected $fillable = [
+        'info',
+    ];
+
+    protected $casts = [
+        'info' => 'json',
+    ];
+}

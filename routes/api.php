@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutContentController;
 use App\Http\Controllers\AdmissionsContentController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AvisosController;
 use App\Http\Controllers\DepartamentosController;
 use App\Http\Controllers\EventosController;
 use App\Http\Controllers\EventoViewController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\InfoController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\MonthlyViewsController;
 use App\Http\Controllers\NewsController;
+use App\Models\Avisos;
 use App\Models\Eventos;
 use App\Models\MonthlyViews;
 use Illuminate\Http\Request;
@@ -79,6 +81,11 @@ Route::group([
     Route::get('/eventosViews', [EventoViewController::class, 'all']);Route::post('/addEventoView', [EventoViewController::class, 'store']);
     Route::get('/monthlyViews', [MonthlyViewsController::class, 'all']);
     Route::post('/addMonthlyView', [MonthlyViewsController::class, 'store']);
+
+    Route::get(('avisos'), [AvisosController::class, 'all']);
+    Route::post('/addAviso', [AvisosController::class, 'addAviso']);    Route::post(('editAviso/{id}'), [AvisosController::class, 'update']);
+
+
 
 
 
