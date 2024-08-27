@@ -19,8 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'supports_credentials' => true,
-    'allowed_origins' => ['https://ispaj.co.ao'],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
