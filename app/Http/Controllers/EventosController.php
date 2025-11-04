@@ -25,7 +25,7 @@ class EventosController extends Controller
         $events = $events->map(function ($event) {
             return array_merge(json_decode($event, true), [
                 'info' => array_merge($event->info, [
-                    'imagem' => asset('storage/images/' . $event->info['imagem'])
+                    'imagem' => $event->info['imagem']
 
                 ])
             ]);

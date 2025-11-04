@@ -20,8 +20,8 @@ class HomeContentController extends Controller
         $homeContents = $homeContents->map(function ($homeContent) {
             return [
                 'id' => $homeContent->id,
-                'videoInicial' => $homeContent->videoInicial ? asset('storage/videos/').'/'. $homeContent->videoInicial : null,
-                'imagemPr' => $homeContent->imagemPr ? asset('storage/images/' . $homeContent->imagemPr) : null,
+                'videoInicial' => $homeContent->videoInicial ? str_replace('/storage/', '/public/storage/', asset('storage/videos/').'/'. $homeContent->videoInicial) : null,
+                'imagemPr' => $homeContent->imagemPr ? str_replace('/storage/', '/public/storage/', asset('storage/images/' . $homeContent->imagemPr)) : null,
                 'perfilPr' => $homeContent->perfilPr,
                 'mensagemPr' => $homeContent->mensagemPr,
                 'testemunhos' => $homeContent->testemunhos,

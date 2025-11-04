@@ -22,7 +22,7 @@ class MonthlyViewsController extends Controller
 
         // Create a new view record
         $view = MonthlyViews::create([
-            'dateAdded' => $request->input('dateAdded'),
+            'dateAdded' => now(),
         ]);
         
 
