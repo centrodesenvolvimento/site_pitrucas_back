@@ -29,7 +29,7 @@ class Mail extends Mailable
     public function build()
     {
         $mail = $this->from($this->details['fromEmail'], $this->details['name'])
-        ->subject('ISPAJ website')
+        ->subject($this->details['title'])
         ->view('emails.mailTemplate');
 
         if ($this->details['file']) {

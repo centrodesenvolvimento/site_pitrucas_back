@@ -26,6 +26,7 @@ class NewsController extends Controller
                     return [
                         'id' => $new->id,
                         'imagens' => $new->imagens,
+                        'polo' => $new->polo,
                         'info' => $new->info,
                         'created_at' => $new->created_at,
                         'updated_at' => $new->updated_at,
@@ -36,6 +37,8 @@ class NewsController extends Controller
                 $news = $news->map(function ($new) {
                     return [
                         'id' => $new->id,
+                        'polo' => $new->polo,
+
                         'imagens' => $new->imagens,
                         'info' => $new->info,
                         'created_at' => $new->created_at,
@@ -49,6 +52,8 @@ class NewsController extends Controller
             $news = $news->map(function ($new) {
                 return [
                     'id' => $new->id,
+                    'polo' => $new->polo,
+
                     'imagens' => $new->imagens,
                     'info' => $new->info,
                     'created_at' => $new->created_at,
@@ -86,6 +91,7 @@ class NewsController extends Controller
 
         $newObj = [
             'imagens' => $list,
+            'polo' => $request->input('polo'),
             'info' => [
                 'titulo' => $request->input('titulo'),
                 'descricao' => $request->input('descricao'),
@@ -157,12 +163,15 @@ class NewsController extends Controller
             $news->imagens = $newList;
             $news->info = [
                 'titulo'=> $request->input('titulo'),
+                
                 'descricao'=> $request->input('descricao'),
                 'data'=> $request->input('data'),
                 'views'=> $request->input('views'),
                 'show' => $request->input('show')
 
             ];
+                        $news->polo = $request->input('polo');
+
             $news->save();
             return response()->json($news);
         }else {
@@ -173,6 +182,8 @@ class NewsController extends Controller
                 'views'=> $request->input('views'),
                 'show' => $request->input('show')
             ];
+            $news->polo = $request->input('polo');
+
             $news->info = $newObj;
             $news->save();
         }

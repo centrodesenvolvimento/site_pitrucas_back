@@ -78,6 +78,7 @@ Route::group([
     Route::get(('info'), [InfoController::class, 'all']);
     Route::post(('editInfo/{id}'), [InfoController::class, 'update']);
     Route::post('/send-email', [MailController::class, 'sendEmail']);
+    Route::post('/handleChat', [MailController::class, 'handleChat']);
     Route::get('/eventosViews', [EventoViewController::class, 'all']);Route::post('/addEventoView', [EventoViewController::class, 'store']);
     Route::get('/monthlyViews', [MonthlyViewsController::class, 'all']);
     Route::post('/addMonthlyView', [MonthlyViewsController::class, 'store']);

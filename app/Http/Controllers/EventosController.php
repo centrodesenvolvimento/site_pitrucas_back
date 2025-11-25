@@ -24,6 +24,7 @@ class EventosController extends Controller
         }
         $events = $events->map(function ($event) {
             return array_merge(json_decode($event, true), [
+                'polo' => $event->polo,
                 'info' => array_merge($event->info, [
                     'imagem' => $event->info['imagem']
 
@@ -72,6 +73,7 @@ class EventosController extends Controller
             'iframe' => $request->input('iframe')
         ];
         Eventos::create([
+            'polo' => $request->input('polo'),
             'info'=> $newObj,
         ]);
         return response()->json($newObj);
@@ -132,6 +134,8 @@ class EventosController extends Controller
                 'show' => $request->input('show')
 
             ];
+            $departamento->polo = $request->input('polo');
+
             $departamento->info = $newObj;
             $departamento->save();
         }else {
@@ -151,6 +155,8 @@ class EventosController extends Controller
 
             ];
             $departamento->info = $newObj;
+            $departamento->polo = $request->input('polo');
+
             $departamento->save();
         }
     }

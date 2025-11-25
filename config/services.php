@@ -29,5 +29,13 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'api' => [
+        'route' => env('VITE_API_ROUTE'),
+        'key' => env('VITE_API_KEY'),
+        'model' => env('VITE_API_MODEL'),
+        'messagecontent1' => env('VITE_MESSAGECONTENT1'),
+        'messagecontent2' => env('VITE_MESSAGECONTENT2'),
+    ],
+
 
 ];

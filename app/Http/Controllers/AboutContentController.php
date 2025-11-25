@@ -19,7 +19,7 @@ class AboutContentController extends Controller
         $aboutContents = $aboutContents->map(function ($aboutContent) {
             return [
                 'id' => $aboutContent->id,
-                'video' => $aboutContent->video ? str_replace('/storage/', '/public/storage/', asset('storage/videos/').'/'. $aboutContent->video) : null,
+                'video' => $aboutContent->video ? str_replace('/storage/', '/storage/', asset('storage/videos/').'/'. $aboutContent->video) : null,
                 'somos' => $aboutContent->somos,
                 'missao' => $aboutContent->missao,
                 'visao' => $aboutContent->visao,
