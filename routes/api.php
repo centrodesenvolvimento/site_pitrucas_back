@@ -82,6 +82,8 @@ Route::group([
     Route::get('/eventosViews', [EventoViewController::class, 'all']);Route::post('/addEventoView', [EventoViewController::class, 'store']);
     Route::get('/monthlyViews', [MonthlyViewsController::class, 'all']);
     Route::post('/addMonthlyView', [MonthlyViewsController::class, 'store']);
+    Route::get('/monthlyViews1', [MonthlyViewsController::class, 'all1']);
+    Route::post('/addMonthlyView1', [MonthlyViewsController::class, 'store1']);
 
     Route::get(('avisos'), [AvisosController::class, 'all']);
     Route::post('/addAviso', [AvisosController::class, 'addAviso']);    Route::post(('editAviso/{id}'), [AvisosController::class, 'update']);
